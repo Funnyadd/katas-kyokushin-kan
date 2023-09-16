@@ -1,7 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { inject } from '@vercel/analytics';
-import React from 'react';
-import YouTube from 'react-youtube'
+import React, { useState } from 'react';
+import YoutubeVideo from './YoutubeVideo'
+import SideBar from "./SideBar";
 import { Container, Col, Row } from 'react-bootstrap';
 
 const App = () => {
@@ -37,30 +38,34 @@ const App = () => {
     {name: "Shushi No Kon", id: "chhXWyvQ6xE"},
   ]
 
-  const showVideos = () => {
-    return(
-      <Container>
-        <Row>
-          {kataList.map(kata => {
-            return(
-              <Col lg="4" key={kata.name} className="video">
-                <h2 style={{color: "#fff", textAlign: "center"}}>{kata.name}</h2>
-                <YouTube videoId={kata.id} title={kata.name} />
-              </Col>
-              )
-          })}
-        </Row>
-      </Container>
-    )
+  const [sidebarOpen, setSideBarOpen] = useState(false);
+
+  const handleViewSidebar = () => {
+    setSideBarOpen(!sidebarOpen);
+  };
+
+  const addVideos = () => {
+    return kataList.map(kata => {
+      return(
+        <Col id={kata.name} lg="4" key={kata.name} className="video">
+          <h2 style={{color: "#fff", textAlign: "center"}}>{kata.name}</h2>
+          <YoutubeVideo videoId={kata.id} title={kata.name} />
+        </Col>
+      )
+    });
   }
 
   return (
     <>
       <div className='App d-flex flex-column align-items-center'>
-        <h1 className='mt-5 mb-5' style={{'fontSize':'44px', 'color':'#ff0000'}}>Katas Kyokushin-Kan</h1>
-        { showVideos() }
+        <h1 className='p-4 mb-5 w-100' >Katas Kyokushin-Kan</h1>
+        <SideBar kataList={kataList} isOpen={sidebarOpen} toggleSidebar={handleViewSidebar} />
+        <Container> 
+          <Row>
+            { addVideos() }
+          </Row>
+        </Container>
       </div>
-
       <div className="p-2" style={{'color':'#ccc','backgroundColor':'#1f1f1f','marginTop':'auto','textAlign':'center'}} >
         @Copyrights 2023 - {new Date().getFullYear()} Adam Mihajlovic. All rights reserved.
       </div>
