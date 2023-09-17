@@ -45,20 +45,18 @@ const App = () => {
   };
 
   const addVideos = () => {
-    return kataList.map(kata => {
-      return(
-        <Col id={kata.name} xl="3" lg="4" md="6" key={kata.name} className="video">
-          <h2>{kata.name}</h2>
-          <YoutubeVideo videoId={kata.id} title={kata.name} />
-        </Col>
-      )
-    });
+    return kataList.map(kata => 
+      <Col id={kata.name} xl="3" lg="4" md="6" key={kata.name} className="video">
+        <h2>{kata.name}</h2>
+        <YoutubeVideo videoId={kata.id} title={kata.name} />
+      </Col>
+    );
   }
 
   return (
     <>
       <div className='App d-flex flex-column align-items-center'>
-        <h1 className='p-4 mb-5 w-100' >Katas Kyokushin-Kan</h1>
+        <h1 className='p-4 mb-5 w-100'>Katas Kyokushin-Kan</h1>
         <SideBar kataList={kataList} isOpen={sidebarOpen} toggleSidebar={handleViewSidebar} />
         <Container> 
           <Row>
