@@ -7,7 +7,7 @@ const SideBar = props => {
     <Nav className={`sidebar ${sidebarClass}`}>
         <Button onClick={props.toggleSidebar} className={`sidebar-toggle ${sidebarClass}`}>Liste Katas</Button>
         {props.kataList.map(kata => 
-            <Nav.Link style={{color: "#fff"}} onClick={props.toggleSidebar} href={`#${kata.name}`}>{kata.name}</Nav.Link>
+            <Nav.Link onClick={props.toggleSidebar} href={`#${kata.name}`}>{kata.name}</Nav.Link>
         )}
     </Nav>
   );

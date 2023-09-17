@@ -47,8 +47,8 @@ const App = () => {
   const addVideos = () => {
     return kataList.map(kata => {
       return(
-        <Col id={kata.name} lg="4" key={kata.name} className="video">
-          <h2 style={{color: "#fff", textAlign: "center"}}>{kata.name}</h2>
+        <Col id={kata.name} xl="3" lg="4" md="6" key={kata.name} className="video">
+          <h2>{kata.name}</h2>
           <YoutubeVideo videoId={kata.id} title={kata.name} />
         </Col>
       )
