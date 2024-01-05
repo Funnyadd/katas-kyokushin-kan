@@ -128,3 +128,6 @@ dist
 .pnp.*
 
 build/
+
+# Mac Os
+.Ds_store

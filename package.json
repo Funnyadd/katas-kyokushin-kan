@@ -1,6 +1,8 @@
 {
   "name": "katas-kyokusin-kan",
-  "version": "1.2.1",
+  "main": "src/index.js",
+  "description": "Site web disponible en PWA pour répertorier les katas de l'organisation Kyokushin-Kan",
+  "version": "1.3.0",
   "private": false,
   "dependencies": {
     "@vercel/analytics": "^1.0.2",

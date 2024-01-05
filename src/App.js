@@ -10,6 +10,7 @@ const App = () => {
   inject();
 
   const kataList = [
+    // Katas Kyokushin-kan
     {name: "Taikyoku Sono Ichi", id: "lerUASrjDds"},
     {name: "Taikyoku Sono Ni", id: "hwja_1afW5k"},
     {name: "Taikyoku Sono San", id: "cgZeVVigUx4"},
@@ -36,6 +37,15 @@ const App = () => {
     {name: "Seipai", id: "wVdzUYfSSi0"},
     {name: "Tawada No Saï Sho", id: "Me8Acm2HI1o"},
     {name: "Shushi No Kon", id: "chhXWyvQ6xE"},
+
+    // Bonkai des katas Kyokusin-kan
+    {name: "Bonkai - Tawada No Saï Sho", id: "Ita4FQ6h494"},
+    {name: "Bonkai - Seienchin", id: "KgIN5P2c9gA"},
+    {name: "Bonkai - Sushiho", id: "5M6UoN-z1d0"},
+    {name: "Bonkai - Kanku", id: "w5UqJNsCQMI"},
+    {name: "Bonkai - Seipai", id: "e-cYY6s6Hq0"},
+    {name: "Bonkai - Terukana No Tonfa", id: "U1G8WBggpaI"},
+    {name: "Bonkai - Garyu", id: "4LdKeEzZSi8"},
   ]
 
   const [sidebarOpen, setSideBarOpen] = useState(false);

@@ -9,8 +9,8 @@
     position: absolute;
     top: 7.8rem;
     border: 0;
-    left: -11rem;
-    width: 11rem;
+    left: -14.5rem;
+    width: 14.5rem;
     transition: left 0.3s ease-in-out !important;
     background-color: #1d2024;
     text-align: left;
@@ -21,7 +21,7 @@
     position: absolute;
     transition: left 0.3s ease-in-out !important;
     top: 0rem;
-    left: 11rem;
+    left: 14.5rem;
     height: 80px;
     font-size: 20px !important;
     font-weight: 500 !important;
@@ -51,7 +51,7 @@
   
 .sidebar-toggle.open {
     transition: left 0.3s ease-in-out !important;
-    left: 11rem;
+    left: 14.5rem;
 }
 
 .nav-link {
