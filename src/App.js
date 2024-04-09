@@ -75,7 +75,7 @@ const App = () => {
         </Container>
       </div>
       <div className="p-2" style={{'color':'#ccc','backgroundColor':'#1f1f1f','marginTop':'auto','textAlign':'center'}} >
-        @Copyrights 2023 - {new Date().getFullYear()} Adam Mihajlovic. All rights reserved.
+        © 2023 - {new Date().getFullYear()} Adam Mihajlovic. All rights reserved.
       </div>
     </>
   );
