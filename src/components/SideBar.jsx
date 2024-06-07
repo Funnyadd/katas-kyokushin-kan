@@ -1,4 +1,3 @@
-import React from "react";
 import { Nav, Button } from 'react-bootstrap';
 
 const SideBar = props => {
@@ -6,8 +5,8 @@ const SideBar = props => {
   return (
     <Nav className={`sidebar ${sidebarClass}`}>
         <Button onClick={props.toggleSidebar} className={`sidebar-toggle ${sidebarClass}`}>Liste Katas</Button>
-        {props.kataList.map(kata => 
-            <Nav.Link onClick={props.toggleSidebar} href={`#${kata.name}`}>{kata.name}</Nav.Link>
+        {props.kataList.map((kata, index) => 
+            <Nav.Link key={index} onClick={props.toggleSidebar} href={`#${props.getTitle(kata)}`}>{props.getTitle(kata)}</Nav.Link>
         )}
     </Nav>
   );
