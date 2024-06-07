@@ -1,7 +1,7 @@
 # Katas Kyokushin-Kan
 
 Simple project to list all of the katas from the Kyokushin-Kan organisation to allow anyone to find and watch videos of them easily.\
-This application will be hosted on https://www.kata.adammihajlovic.ca
+This application is hosted on https://www.kata.adammihajlovic.ca
 
 ## Available Scripts
 
