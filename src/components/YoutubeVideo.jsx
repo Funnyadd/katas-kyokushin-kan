@@ -9,8 +9,8 @@ const YoutubeVideo = ({ title, videoId }) => {
         height="400"
         src={`https://www.youtube.com/embed/${videoId}`}
         title={title}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" >
-      </iframe>
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+      />
     </div>
   );
 }
