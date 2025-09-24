@@ -5,8 +5,11 @@ const SideBar = props => {
   return (
     <Nav className={`sidebar ${sidebarClass}`}>
         <Button onClick={props.toggleSidebar} className={`sidebar-toggle ${sidebarClass}`}>Liste Katas</Button>
-        {props.kataList.map((kata, index) => 
-            <Nav.Link key={index} onClick={props.toggleSidebar} href={`#${props.getTitle(kata)}`}>{props.getTitle(kata)}</Nav.Link>
+        {
+          props.kataList.map((kata, index) =>
+            <Nav.Link key={index} onClick={props.toggleSidebar} href={`#${props.getTitle(kata)}`}>
+              {props.getTitle(kata)}
+            </Nav.Link>
         )}
     </Nav>
   );
