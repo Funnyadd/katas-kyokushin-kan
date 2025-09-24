@@ -57,37 +57,42 @@ const App = () => {
 
   const [sidebarOpen, setSideBarOpen] = useState(false);
 
-  const handleViewSidebar = () => {
-    setSideBarOpen(!sidebarOpen);
-  }
+  const handleViewSidebar = () => setSideBarOpen(!sidebarOpen);
 
   const getTitle = (kata) => {
-    if (kata.kata & kata.bonkai) {
-      return (kata.name + " | kata + bonkai")
-    }
-    else if (kata.kata) {
-      return (kata.name + " | kata")
-    }
-    else if (kata.bonkai) {
-      return (kata.name + " | bonkai")
-    }
-    else {
-      console.error(`kata ${kata.name} missing kata or bonkai instruction`)
-    }
+    if (kata.kata & kata.bonkai)
+      return (kata.name + " | kata + bonkai");
+    else if (kata.kata)
+      return (kata.name + " | kata");
+    else if (kata.bonkai)
+      return (kata.name + " | bonkai");
+    else
+      console.error(`kata ${kata.name} missing kata or bonkai instruction`);
   }
 
-  const addVideos = () => {
-    return kataList.map((kata, index) => 
-      <Col id={getTitle(kata)} xl="3" lg="4" md="6" key={index} className="video">
-        <h2 dangerouslySetInnerHTML={{__html: getTitle(kata).replace(" | ", "<br/>")}}></h2>
+  const addVideos = () => kataList.map((kata, index) => {
+    const title = getTitle(kata);
+    const titleParts = title.split(" | ");
+
+    return (
+      <Col id={title} xl="3" lg="4" md="6" key={index} className="video">
+        <h2>
+          {
+            titleParts.map((part, index) => (
+              <React.Fragment key={index}>
+                {part} {index < titleParts.length - 1 && <br/>}
+              </React.Fragment>
+            ))
+          }
+        </h2>
         {
           kata.isFacebookVideo
-          ? <FacebookVideo videoId={kata.id} title={getTitle(kata)} />
-          : <YoutubeVideo videoId={kata.id} title={getTitle(kata)} />
+          ? <FacebookVideo videoId={kata.id} title={title} />
+          : <YoutubeVideo videoId={kata.id} title={title} />
         }
       </Col>
-    )
-  }
+    );
+});
 
   return (
     <>
@@ -100,7 +105,7 @@ const App = () => {
           </Row>
         </Container>
       </div>
-      <div className="p-2" style={{'color':'#ccc','backgroundColor':'#1f1f1f','marginTop':'auto','textAlign':'center'}} >
+      <div className="p-2 footer" >
         © 2023 - {new Date().getFullYear()} Adam Mihajlovic. All rights reserved.
       </div>
     </>

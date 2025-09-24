@@ -5,6 +5,13 @@
     background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
 }
 
+.footer {
+    color: #ccc;
+    background-color: #1f1f1f;
+    margin-top: auto;
+    text-align: center;
+}
+
 .sidebar {
     position: absolute;
     top: 7.8rem;
@@ -37,7 +44,6 @@
     padding-left: 0 !important;
     border-left: 0 !important;
 }
-
 
 .sidebar-toggle:hover {
     background-color: #ee0000 !important;
